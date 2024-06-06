@@ -1,0 +1,47 @@
+@use "../utils/mixins" as *;
+@use "../utils/variables" as *;
+
+.heading {
+  box-shadow: 0px 5px 8px -5px rgb(140 140 140 / 50%);
+  flex-shrink: 0;
+  width: 100%;
+  padding: 20px 10px;
+
+  @include min-max(tab, large) {
+    padding: 20px 20px;
+  }
+
+  &__inner {
+    @include flex-between;
+    margin: 0 auto;
+    max-width: $width-container-pc;
+
+    .logo {
+      max-width: 80px;
+
+      &__image {
+        border-radius: 4px;
+        width: 100%;
+      }
+    }
+
+    .navigation {
+      &__list {
+        @include flex-center;
+      }
+
+      &__list-item {
+        margin-left: 12px;
+      }
+
+      &__link {
+        font-size: $font-size-sp;
+        color: #565656;
+
+        @include min(tab) {
+          font-size: $font-size-pc;
+        }
+      }
+    }
+  }
+}

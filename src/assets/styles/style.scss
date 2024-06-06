@@ -1,0 +1,16 @@
+@charset 'UTF-8';
+
+// Base styles
+@use "./base/base";
+@use "./base/reset";
+
+// Layout styles
+@use "./layouts/header";
+@use "./layouts/footer";
+
+// Page specific styles
+@use "./pages/home";
+@use "./pages/about";
+
+// modules styles
+@use "./components/loading";

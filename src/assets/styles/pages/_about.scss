@@ -1,0 +1,76 @@
+@use "../utils/mixins" as *;
+@use "../utils/variables" as *;
+
+.about {
+  @include container-style;
+
+  &__title {
+    border-left: 4px solid #999;
+    font-size: $font-size-h2-sp;
+    font-weight: 600;
+    margin: 20px 0 20px 0;
+    padding: 3px 0 3px 6px;
+
+    @include min(tab) {
+      font-size: $font-size-h2-pc;
+    }
+  }
+
+  .section {
+    margin-bottom: 25px;
+
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 2%;
+
+      @include min(small) {
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1.5%;
+      }
+    }
+
+    &__list-item {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+
+    &__image {
+      width: 100%;
+    }
+
+    &__description {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      font-size: $font-size-sp;
+      line-height: 1.2;
+      overflow: hidden;
+      margin-bottom: 10px;
+      padding-top: 5px;
+
+      @include min(tab) {
+        font-size: $font-size-pc;
+        line-height: 1.4;
+      }
+    }
+
+    &__button {
+      align-self: flex-end;
+    }
+  }
+
+  .related-content {
+    text-align: right;
+    margin-bottom: 30px;
+
+    &__link {
+      font-size: $font-size-sp;
+
+      @include min(tab) {
+        font-size: $font-size-pc;
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+@use "../utils/mixins" as *;
+@use "../utils/variables" as *;
+
+.footer {
+  background-color: rgb(72, 72, 72);
+  flex-shrink: 0;
+  padding: 20px 10px;
+
+  @include min-max(tab, large) {
+    padding: 20px 20px;
+  }
+
+  &__inner {
+    @include flex-between;
+    margin: 0 auto;
+    max-width: $width-container-pc;
+
+    .navigation {
+      &__list {
+        @include flex-center;
+      }
+
+      &__list-item {
+        margin-right: 12px;
+      }
+
+      &__link {
+        font-size: $font-size-sp;
+        color: #e5e5e5;
+
+        @include min(tab) {
+          font-size: $font-size-pc;
+        }
+      }
+    }
+
+    .sns {
+      &__list {
+        @include flex-center;
+      }
+
+      &__list-item {
+        margin-left: 10px;
+        width: 100%;
+
+        @include min(tab) {
+          margin-left: 18px;
+        }
+      }
+
+      &__link {
+        img {
+          max-width: 16px;
+
+          @include min(tab) {
+            max-width: 22px;
+          }
+        }
+      }
+    }
+  }
+}

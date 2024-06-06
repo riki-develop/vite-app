@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <link rel="stylesheet" href="./assets/styles/style.scss">
+  </head>
+
+  <body>
+    <%- include('./components/header.ejs', { rootPath: '' }) %>
+    <%- include('./components/loading.ejs', { rootPath: '' }) %>
+
+    <main class="home">
+      <section class="key-visual">
+        <h2 class="key-visual__title">Vite App</h2>
+
+        <picture class="key-visual__picture">
+          <source type="image/png" media="(min-width: 480px)" srcset="./images/pc/bummy_1020x480.png">
+          <img type="image/png" src="./images/sp_tab/dummy_780x600.png" alt="sample image" class="key-visual__image">
+        </picture>
+      </section>
+
+      <section class="section">
+        <picture class="section__picture">
+          <source type="image/png" media="(min-width: 480px)" srcset="./images/pc/dummy_500x350.png">
+          <img type="image/png" src="./images/sp_tab/dummy_780x420.png" alt="sample image" class="section__image">
+        </picture>
+        <p class="section__description">
+          文はユースペディアで推奨よれフレーズたあるため、著作なるれるアナウンサーと侵害権適切の著作記事を行うられてもできるある、下のルールは、公開設ける下が補足することとして引用適切でしょあれているなです。たとえば、方針の決議会は、言語の引用する漏洩独自で目的に侵害なり、そのSAでもって例外を.行わことを引用しれるん。
+        </p>
+      </section>
+
+      <section class="section section--reverse">
+        <picture class="section__picture">
+          <source type="image/png" media="(min-width: 480px)" srcset="./images/pc/dummy_500x350.png">
+          <img type="image/png" src="./images/sp_tab/dummy_780x420.png" alt="sample image" class="section__image">
+        </picture>
+        <p class="section__description">
+          文はユースペディアで推奨よれフレーズたあるため、著作なるれるアナウンサーと侵害権適切の著作記事を行うられてもできるある、下のルールは、公開設ける下が補足することとして引用適切でしょあれているなです。たとえば、方針の決議会は、言語の引用する漏洩独自で目的に侵害なり、そのSAでもって例外を.行わことを引用しれるん。
+        </p>
+      </section>
+
+      <article class="related-content">
+        <a href="./pages/about.html" class="related-content__link">About Page</a>
+      </article>
+    </main>
+
+    <%- include('./components/footer.ejs', { rootPath: '' }) %>
+
+    <script type="module" src="./assets/scripts/main.js"></script>
+  </body>
+</html>

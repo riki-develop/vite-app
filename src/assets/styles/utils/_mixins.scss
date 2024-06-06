@@ -1,0 +1,51 @@
+@use 'sass:map';
+@use './_variables'  as *;
+
+// media
+$breakpoints: (
+  small: 480px,
+  tab: 768px,
+  large: 1020px
+) !default;
+
+@mixin min($breakpoint) {
+  @media (width >= #{map-get($breakpoints, $breakpoint)}) {
+    @content;
+  }
+}
+
+@mixin max($breakpoint) {
+  @media (width <= #{map-get($breakpoints, $breakpoint)}) {
+    @content;
+  }
+}
+
+@mixin min-max($min-breakpoint, $max-breakpoint) {
+  @media (width >= #{map-get($breakpoints, $min-breakpoint)}) and (width <= #{map-get($breakpoints, $max-breakpoint)}) {
+    @content;
+  }
+}
+
+// container
+@mixin container-style {
+  flex: 1;
+  margin: 0 auto;
+  max-width: $width-container-pc;
+  padding: 0 10px;
+
+  @include min(large) {
+    padding: 0;
+  }
+}
+
+// flex
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
